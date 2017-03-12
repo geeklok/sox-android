@@ -60,19 +60,18 @@ for arch in armeabi armeabi-v7a arm64-v8a x86; do
     ;;
   esac
 
+mkdir -p libs/$arch
+
 ${CMAKE} . \
   -DCMAKE_SYSTEM_NAME=Android \
   -DCMAKE_SYSTEM_VERSION=$SYSTEM_VERSION \
   -DCMAKE_ANDROID_ARCH_ABI=$ANDROID_ARCH_ABI \
   -DCMAKE_SYSROOT=$ANDROID_NDK/platforms/android-$SYSROOT \
   -DCMAKE_C_COMPILER=$ANDROID_NDK/toolchains/$C_COMPILER-gcc \
+  -DCMAKE_AR=$ANDROID_NDK/toolchains/$C_COMPILER-ar \
   -DCMAKE_C_FLAGS="-DHAVE_FMEMOPEN=TRUE -std=c99 -fopenmp $C_FLAGS"
 
 make sox-android
-
-mkdir -p libs/$arch
-cp libsox-android.a libs/$arch
-
 make clean
 rm -rf CMakeCache.txt CMakeFiles/
 
