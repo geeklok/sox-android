@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.4.1)
 
+# build sox's libraries first
 subdirs(../sox)
 
+# build android related library
 include_directories(..)
 
 file(GLOB sources
@@ -10,8 +12,6 @@ file(GLOB sources
     "../stdioext/*.c"
     "../stdlib/*.c"
 )
-
-include_directories(..)
 
 add_library( sox-android
 
