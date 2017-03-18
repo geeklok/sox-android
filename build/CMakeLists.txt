@@ -13,7 +13,7 @@ file(GLOB sources
 
 include_directories(..)
 
-add_library( android
+add_library( sox-android
 
              STATIC
 
