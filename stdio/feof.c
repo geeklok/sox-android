@@ -38,6 +38,8 @@
  */
 #undef feof
 
+#define __sfeof(p)     (((p)->_flags & __SEOF) != 0)
+
 int
 feof(FILE *fp)
 {

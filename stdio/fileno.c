@@ -38,6 +38,8 @@
  */
 #undef fileno
 
+#define __sfileno(p)   ((p)->_file)
+
 int
 fileno(FILE *fp)
 {

@@ -38,6 +38,8 @@
  */
 #undef ferror
 
+#define	__sferror(p)	(((p)->_flags & __SERR) != 0)
+
 int
 ferror(FILE *fp)
 {

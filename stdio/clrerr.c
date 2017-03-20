@@ -34,6 +34,8 @@
 #include <stdio.h>
 #undef	clearerr
 
+#define	__sclearerr(p)	((void)((p)->_flags &= ~(__SERR|__SEOF)))
+
 void
 clearerr(FILE *fp)
 {

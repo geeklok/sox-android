@@ -51,6 +51,8 @@
 #include "local.h"
 #include "fvwrite.h"
 
+#define	__sferror(p)	(((p)->_flags & __SERR) != 0)
+
 static void __find_arguments(const char *fmt0, va_list ap, va_list **argtable,
     size_t *argtablesiz);
 static int __grow_type_table(unsigned char **typetable, int *tablesize);
