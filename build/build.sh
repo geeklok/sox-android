@@ -32,7 +32,6 @@ for arch in armeabi armeabi-v7a arm64-v8a x86; do
         ANDROID_ARCH_ABI=armeabi
         SYSROOT=$SYSTEM_VERSION/arch-arm
         C_COMPILER=arm-linux-androideabi-4.9/prebuilt/$HOST_SYSTEM/bin/arm-linux-androideabi
-        C_FLAGS=-DALIGNBYTES=3
     ;;
 
     armeabi-v7a)
@@ -40,7 +39,6 @@ for arch in armeabi armeabi-v7a arm64-v8a x86; do
         ANDROID_ARCH_ABI=armeabi-v7a
         SYSROOT=$SYSTEM_VERSION/arch-arm
         C_COMPILER=arm-linux-androideabi-4.9/prebuilt/$HOST_SYSTEM/bin/arm-linux-androideabi
-        C_FLAGS=-DALIGNBYTES=3
     ;;
     
     arm64-v8a)
@@ -56,7 +54,6 @@ for arch in armeabi armeabi-v7a arm64-v8a x86; do
         ANDROID_ARCH_ABI=x86
         SYSROOT=$SYSTEM_VERSION/arch-x86
         C_COMPILER=x86-4.9/prebuilt/$HOST_SYSTEM/bin/i686-linux-android
-        C_FLAGS=-DALIGNBYTES=3
     ;;
   esac
 

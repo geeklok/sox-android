@@ -5,6 +5,7 @@ subdirs(../sox)
 
 # build android related library
 include_directories(..)
+include_directories(../private)
 
 file(GLOB sources
     "../bionic/*.cpp"
